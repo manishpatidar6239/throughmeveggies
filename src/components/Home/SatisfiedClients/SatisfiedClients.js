@@ -43,7 +43,7 @@ export const SatisfiedClients = () => {
           width={"100%"}
         >
           {stats.map(({ id, icon, value, label }) => (
-            <Grid key={id} item xs={6} md={3}>
+            <Grid key={id}  size={3} >
               <Stack
                 direction="row"
                 spacing={3}

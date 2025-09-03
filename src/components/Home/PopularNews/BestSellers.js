@@ -5,7 +5,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { WeeklyProd } from "@/data/data"; 
-import { Box, Typography, IconButton, Button } from "@mui/material";
+import { Box, Typography, Button } from "@mui/material";
 import EastIcon from "@mui/icons-material/East";
 import WestIcon from "@mui/icons-material/West";
 import ProductCardLeft from "../commoncard/ProductCardLeft";

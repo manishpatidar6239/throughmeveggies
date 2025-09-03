@@ -2,8 +2,7 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import Checkbox from "@mui/material/Checkbox";
-import CssBaseline from "@mui/material/CssBaseline";
+import Checkbox from "@mui/material/Checkbox"; 
 import Divider from "@mui/material/Divider";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormLabel from "@mui/material/FormLabel";
@@ -15,7 +14,7 @@ import Stack from "@mui/material/Stack";
 import MuiCard from "@mui/material/Card";
 import { styled } from "@mui/material/styles";
 import { FacebookIcon, GoogleIcon } from "../CustomIcons";
-import AuthLayout from "../layout";
+ 
 
 const Card = styled(MuiCard)(({ theme }) => ({
   display: "flex",
