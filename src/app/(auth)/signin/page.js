@@ -150,7 +150,7 @@ export default function SignIn(props) {
             Forgot your password?
           </Link>
         </Box>
-        <Divider>or</Divider>
+        {/* <Divider>or</Divider>
         <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
           <Button
             fullWidth
@@ -178,7 +178,7 @@ export default function SignIn(props) {
               Sign up
             </Link>
           </Typography>
-        </Box>
+        </Box> */}
       </Card>
     </SignInContainer>
   );

@@ -191,7 +191,7 @@ export default function SignUp() {
               Sign up
             </Button>
           </Box>
-          <Divider>
+          {/* <Divider>
             <Typography sx={{ color: "text.secondary" }}>or</Typography>
           </Divider>
           <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
@@ -221,7 +221,7 @@ export default function SignUp() {
                 Sign in
               </Link>
             </Typography>
-          </Box>
+          </Box> */}
         </Card>
       </SignUpContainer>
      
