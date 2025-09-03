@@ -113,6 +113,7 @@ export const HottestData = [
       name: "Juice & Drinks",
       imageUrl: "/images/Home/Hottest/h3-shop-category6.png",
     },
+    
   ];
 
 import EastIcon from "@mui/icons-material/East"; 
