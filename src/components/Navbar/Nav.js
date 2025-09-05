@@ -1,4 +1,5 @@
-'use client'
+"use client";
+import React, { useState } from "react";
 import { menuLinks } from "@/data/data";
 import MenuIcon from "@mui/icons-material/Menu";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
@@ -7,26 +8,34 @@ import {
   Box,
   Container,
   Drawer,
-  IconButton,
   Stack,
   Toolbar,
   Typography,
 } from "@mui/material";
 import Link from "next/link";
-import React from "react";
-import { Sidebar } from "./Sidebar";
+import { Sidebar } from "./Sidebar"; 
+import CartDrawer from "../CartDrawer/CartDrawer";
 
 export const Nav = () => {
-  const [open, setOpen] = React.useState(false);
+  //  Sidebar Drawer
 
-  const toggleDrawer = (newOpen) => () => {
-    setOpen(newOpen);
+  const [openSidebar, setOpenSidebar] = useState(false);
+  const toggleDrawerSidebar = (newOpen) => () => {
+    setOpenSidebar(newOpen);
   };
+
+  //  Sidebar Drawer
+  const [openCart, setOpenCart] = useState(false);
+  const toggleDrawerCart = (open) => () => {
+    setOpenCart(open);
+  };
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{ padding: 0 }}>
         <Container maxWidth="lg">
           <Toolbar disableGutters>
+            {/* Browse Categories  */}
             <Stack
               direction={"row"}
               spacing={1.5}
@@ -40,16 +49,20 @@ export const Nav = () => {
                 cursor: "pointer",
                 mr: 7,
               }}
-              onClick={toggleDrawer(true)}
+              onClick={toggleDrawerSidebar(true)}
             >
               <MenuIcon />
               <Typography variant="body1" fontWeight={"600"}>
                 Browse Categories
               </Typography>
             </Stack>
-            <Drawer open={open} onClose={toggleDrawer(false)}>
-              <Sidebar toggleDrawer={toggleDrawer}/>
+            <Drawer open={openSidebar} onClose={toggleDrawerSidebar(false)}>
+              <Sidebar toggleDrawerSidebar={toggleDrawerSidebar} />
             </Drawer>
+            {/*End Browse Categories  */}
+
+            {/* Nav Links  */}
+
             <Stack direction={"row"} spacing={4} sx={{ flexGrow: 1 }}>
               {menuLinks.map((link, index) => {
                 return (
@@ -63,6 +76,8 @@ export const Nav = () => {
                 );
               })}
             </Stack>
+
+            {/* Card  */}
             <Stack
               direction={"row"}
               sx={{
@@ -72,7 +87,9 @@ export const Nav = () => {
                 height: "100%",
                 minHeight: "65px",
                 padding: "0 55px",
+                cursor: "pointer",
               }}
+              onClick={toggleDrawerCart(true)}
             >
               <ShoppingCartIcon />
               <Link
@@ -80,9 +97,16 @@ export const Nav = () => {
                 className="font-bold text-sm"
                 sx={{ flexGrow: 1 }}
               >
-                Card 0 - $0.00
+                Cart 0 - $0.00
               </Link>
             </Stack>
+            <Drawer
+              anchor="right"
+              open={openCart}
+              onClose={toggleDrawerCart(false)}
+            >
+              <CartDrawer toggleDrawerCart={toggleDrawerCart} />
+            </Drawer>
           </Toolbar>
         </Container>
       </AppBar>

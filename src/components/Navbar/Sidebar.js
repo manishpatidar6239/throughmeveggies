@@ -15,7 +15,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { HottestData } from "@/data/data";
 
-export const Sidebar = ({ toggleDrawer }) => {
+export const Sidebar = ({ toggleDrawerSidebar }) => {
   return (
     <Box sx={{ width: 300, px: 2.5, py: 3 }} role="presentation">
       <Stack
@@ -32,7 +32,7 @@ export const Sidebar = ({ toggleDrawer }) => {
           priority
         />
         <CancelOutlinedIcon
-          onClick={toggleDrawer(false)}
+          onClick={toggleDrawerSidebar(false)}
           sx={{ color: "#d3d3d3", cursor: "pointer" }}
         />
       </Stack>
