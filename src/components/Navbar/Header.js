@@ -17,10 +17,10 @@ import HeadsetMicIcon from "@mui/icons-material/HeadsetMic";
 import Link from "next/link";
 
 export const Header = () => {
-  const [age, setAge] = React.useState("");
+  const [category, setCategory] = React.useState("");
 
   const handleChange = (event) => {
-    setAge(event.target.value);
+    setCategory(event.target.value);
   };
   return (
     <Box sx={{ my: 1 }}>
@@ -53,58 +53,58 @@ export const Header = () => {
               height: "65px",
             }}
           >
-             <FormControl
-                variant="standard"
+            <FormControl
+              variant="standard"
+              elevation={0}
+              sx={{
+                minWidth: 120,
+                border: "none",
+                padding: 0,
+                backgroundColor: "#f5f5f5",
+                height: "100%",
+                borderRadius: "100px 0px 0px 100px",
+              }}
+            >
+              <Select
                 elevation={0}
+                value={category}
+                onChange={handleChange}
+                displayEmpty
+                variant="outlined"
                 sx={{
-                  minWidth: 120,
-                  border: "none",
+                  boxShadow: "none",
                   padding: 0,
-                  backgroundColor: "#f5f5f5",
-                  height: "100%",
-                  borderRadius: "100px 0px 0px 100px",
+                  "& .MuiOutlinedInput-notchedOutline": {
+                    border: "none",
+                  },
+                  "&:hover .MuiOutlinedInput-notchedOutline": {
+                    border: "none",
+                  },
+                  "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                    border: "none",
+                  },
                 }}
-              >
-                <Select
-                  elevation={0}
-                  value={age}
-                  onChange={handleChange}
-                  displayEmpty
-                  variant="outlined"
-                  sx={{
-                    boxShadow: "none",
-                    padding: 0,
-                    "& .MuiOutlinedInput-notchedOutline": {
-                      border: "none",
-                    },
-                    "&:hover .MuiOutlinedInput-notchedOutline": {
-                      border: "none",
-                    },
-                    "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                      border: "none",
-                    },
-                  }}
-                  MenuProps={{
-                    PaperProps: {
-                      sx: {
-                        "& .MuiMenuItem-root:hover": {
-                          backgroundColor: "transparent",
-                        },
+                MenuProps={{
+                  PaperProps: {
+                    sx: {
+                      "& .MuiMenuItem-root:hover": {
+                        backgroundColor: "transparent",
                       },
                     },
-                  }}
-                >
-                  <MenuItem value="">
-                    <em sx={{ color: "#eee" }}>Select a Category</em>
-                  </MenuItem>
-                  <MenuItem value={10}>Bread & Bakery</MenuItem>
-                  <MenuItem value={20}>Coffee</MenuItem>
-                  <MenuItem value={30}>Discount Weekly</MenuItem>
-                  <MenuItem value={40}>Bread & Bakery</MenuItem>
-                  <MenuItem value={50}>Coffee</MenuItem>
-                  <MenuItem value={60}>Discount Weekly</MenuItem>
-                </Select>
-              </FormControl>
+                  },
+                }}
+              >
+                <MenuItem value="">
+                  <em sx={{ color: "#eee" }}>Select a Category</em>
+                </MenuItem>
+                <MenuItem value={10}>Bread & Bakery</MenuItem>
+                <MenuItem value={20}>Coffee</MenuItem>
+                <MenuItem value={30}>Discount Weekly</MenuItem>
+                <MenuItem value={40}>Bread & Bakery</MenuItem>
+                <MenuItem value={50}>Coffee</MenuItem>
+                <MenuItem value={60}>Discount Weekly</MenuItem>
+              </Select>
+            </FormControl>
             <InputBase
               sx={{ ml: 1, flex: 1 }}
               placeholder="Search Product"

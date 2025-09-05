@@ -81,6 +81,7 @@ export const OfferHome = () => {
                   >
                     {offers.description}
                   </Typography>
+
                   <Button variant="outlined" sx={{ borderRadius: "50px" }}>
                     {offers.buttonText}
                   </Button>
