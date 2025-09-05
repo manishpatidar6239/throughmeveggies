@@ -31,7 +31,7 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import Badge from "@mui/material/Badge";
 import InputBase from "@mui/material/InputBase";
 import SearchIcon from "@mui/icons-material/Search";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import { toast } from "react-toastify";
 import api from "@/apiHandler/page";
 import Cookies from "js-cookie";
@@ -255,7 +255,7 @@ export default function AdminMainLayout({ children, window }) {
               color: theme.palette.primary.main,
               fontWeight: "bold",
               boxShadow: 1,
-              fontSize:14
+              fontSize: 14,
             }}
           >
             TMV
@@ -267,7 +267,7 @@ export default function AdminMainLayout({ children, window }) {
             sx={{
               fontWeight: 700,
               color: "white",
-              fontSize:18,
+              fontSize: 18,
               textShadow: "0 1px 2px rgba(0,0,0,0.2)",
             }}
           >
